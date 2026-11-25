@@ -1,0 +1,111 @@
+{
+    "version": 8,
+    "include": [
+        "base.json",
+        "platform.json",
+        "compiler.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "windows-clang",
+            "inherits": [
+                "base",
+                "platform-windows",
+                "compiler-clang"
+            ]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "windows-clang-debug",
+            "inherits": "base",
+            "configurePreset": "windows-clang",
+            "configuration": "Debug"
+        },
+        {
+            "name": "windows-clang-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "windows-clang",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "windows-clang-release",
+            "inherits": "base",
+            "configurePreset": "windows-clang",
+            "configuration": "Release"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "windows-clang-debug",
+            "inherits": "base",
+            "configurePreset": "windows-clang",
+            "configuration": "Debug"
+        },
+        {
+            "name": "windows-clang-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "windows-clang",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "windows-clang-release",
+            "inherits": "base",
+            "configurePreset": "windows-clang",
+            "configuration": "Release"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "windows-clang-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-clang-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-clang-debug"
+                }
+            ]
+        },
+        {
+            "name": "windows-clang-relwithdebinfo",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-clang-relwithdebinfo"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-clang-relwithdebinfo"
+                }
+            ]
+        },
+        {
+            "name": "windows-clang-release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-clang-release"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-clang-release"
+                }
+            ]
+        }
+    ]
+}

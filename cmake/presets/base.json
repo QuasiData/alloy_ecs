@@ -1,0 +1,47 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "base",
+            "hidden": true,
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+                "ALLOY_ECS_BUILD_TESTS": true,
+                "ALLOY_ECS_BUILD_EXAMPLES": true,
+                "ALLOY_ECS_BUILD_BENCHMARKS": true,
+                "CMAKE_CXX_SCAN_FOR_MODULES": false
+            }
+        },
+        {
+            "name": "sanitize",
+            "hidden": true,
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_CXX_FLAGS": "-fsanitize=address,undefined -fsanitize-address-use-after-scope -fno-omit-frame-pointer -fno-sanitize-recover=undefined",
+                "ALLOY_ECS_BUILD_BENCHMARKS": false
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "base",
+            "hidden": true,
+            "configurePreset": "base"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "base",
+            "hidden": true,
+            "configurePreset": "base",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error"
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "compiler-clang",
+            "hidden": true,
+            "environment": {
+                "CC": "clang",
+                "CXX": "clang++"
+            }
+        },
+        {
+            "name": "compiler-gcc",
+            "hidden": true,
+            "environment": {
+                "CC": "gcc",
+                "CXX": "g++"
+            }
+        },
+        {
+            "name": "compiler-msvc",
+            "hidden": true,
+            "environment": {
+                "CC": "cl",
+                "CXX": "cl"
+            }
+        }
+    ]
+}

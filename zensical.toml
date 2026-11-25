@@ -1,0 +1,24 @@
+[project]
+site_name = "alloy_ecs"
+site_description = "Entity-component-system library for Alloy."
+docs_dir = "docs"
+site_dir = "build/site"
+exclude_docs = """
+/CMakeLists.txt
+/Doxyfile.in
+/requirements.txt
+/build.py
+"""
+
+[project.theme]
+features = ["content.code.copy", "navigation.top"]
+
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"

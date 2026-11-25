@@ -1,0 +1,111 @@
+{
+    "version": 8,
+    "include": [
+        "base.json",
+        "platform.json",
+        "compiler.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-gcc-san",
+            "inherits": [
+                "sanitize",
+                "platform-linux",
+                "compiler-gcc"
+            ]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "linux-gcc-debug-san",
+            "inherits": "base",
+            "configurePreset": "linux-gcc-san",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-gcc-relwithdebinfo-san",
+            "inherits": "base",
+            "configurePreset": "linux-gcc-san",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "linux-gcc-release-san",
+            "inherits": "base",
+            "configurePreset": "linux-gcc-san",
+            "configuration": "Release"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "linux-gcc-debug-san",
+            "inherits": "base",
+            "configurePreset": "linux-gcc-san",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-gcc-relwithdebinfo-san",
+            "inherits": "base",
+            "configurePreset": "linux-gcc-san",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "linux-gcc-release-san",
+            "inherits": "base",
+            "configurePreset": "linux-gcc-san",
+            "configuration": "Release"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "linux-gcc-debug-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-gcc-san"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-gcc-debug-san"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-gcc-debug-san"
+                }
+            ]
+        },
+        {
+            "name": "linux-gcc-relwithdebinfo-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-gcc-san"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-gcc-relwithdebinfo-san"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-gcc-relwithdebinfo-san"
+                }
+            ]
+        },
+        {
+            "name": "linux-gcc-release-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-gcc-san"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-gcc-release-san"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-gcc-release-san"
+                }
+            ]
+        }
+    ]
+}

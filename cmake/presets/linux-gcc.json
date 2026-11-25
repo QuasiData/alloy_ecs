@@ -1,0 +1,111 @@
+{
+    "version": 8,
+    "include": [
+        "base.json",
+        "platform.json",
+        "compiler.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-gcc",
+            "inherits": [
+                "base",
+                "platform-linux",
+                "compiler-gcc"
+            ]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "linux-gcc-debug",
+            "inherits": "base",
+            "configurePreset": "linux-gcc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-gcc-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "linux-gcc",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "linux-gcc-release",
+            "inherits": "base",
+            "configurePreset": "linux-gcc",
+            "configuration": "Release"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "linux-gcc-debug",
+            "inherits": "base",
+            "configurePreset": "linux-gcc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-gcc-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "linux-gcc",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "linux-gcc-release",
+            "inherits": "base",
+            "configurePreset": "linux-gcc",
+            "configuration": "Release"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "linux-gcc-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-gcc"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-gcc-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-gcc-debug"
+                }
+            ]
+        },
+        {
+            "name": "linux-gcc-relwithdebinfo",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-gcc"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-gcc-relwithdebinfo"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-gcc-relwithdebinfo"
+                }
+            ]
+        },
+        {
+            "name": "linux-gcc-release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-gcc"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-gcc-release"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-gcc-release"
+                }
+            ]
+        }
+    ]
+}

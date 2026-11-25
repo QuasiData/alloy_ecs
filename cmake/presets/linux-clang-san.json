@@ -1,0 +1,111 @@
+{
+    "version": 8,
+    "include": [
+        "base.json",
+        "platform.json",
+        "compiler.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-clang-san",
+            "inherits": [
+                "sanitize",
+                "platform-linux",
+                "compiler-clang"
+            ]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "linux-clang-debug-san",
+            "inherits": "base",
+            "configurePreset": "linux-clang-san",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-clang-relwithdebinfo-san",
+            "inherits": "base",
+            "configurePreset": "linux-clang-san",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "linux-clang-release-san",
+            "inherits": "base",
+            "configurePreset": "linux-clang-san",
+            "configuration": "Release"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "linux-clang-debug-san",
+            "inherits": "base",
+            "configurePreset": "linux-clang-san",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-clang-relwithdebinfo-san",
+            "inherits": "base",
+            "configurePreset": "linux-clang-san",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "linux-clang-release-san",
+            "inherits": "base",
+            "configurePreset": "linux-clang-san",
+            "configuration": "Release"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "linux-clang-debug-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-clang-san"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-clang-debug-san"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-clang-debug-san"
+                }
+            ]
+        },
+        {
+            "name": "linux-clang-relwithdebinfo-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-clang-san"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-clang-relwithdebinfo-san"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-clang-relwithdebinfo-san"
+                }
+            ]
+        },
+        {
+            "name": "linux-clang-release-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "linux-clang-san"
+                },
+                {
+                    "type": "build",
+                    "name": "linux-clang-release-san"
+                },
+                {
+                    "type": "test",
+                    "name": "linux-clang-release-san"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            preset: linux-clang-debug
+          - os: ubuntu-24.04
+            preset: linux-clang-debug-san
+          - os: ubuntu-24.04
+            preset: linux-gcc-debug
+          - os: ubuntu-24.04
+            preset: linux-gcc-debug-san
+          - os: windows-2022
+            preset: windows-clang-debug
+          - os: windows-2022
+            preset: windows-msvc-debug
+          - os: ubuntu-24.04
+            preset: linux-gcc-release
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up MSVC environment (also used by clang on Windows)
+        if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+      - name: Check build tools
+        run: |
+          cmake --version
+          ninja --version
+      - name: Configure, build and test
+        run: cmake --workflow --preset ${{ matrix.preset }}
+      - name: Run benchmark smoke check
+        if: matrix.preset == 'linux-gcc-release'
+        run: ./build/linux-gcc/benchmarks/Release/alloy_ecs_benchmarks --benchmark_min_time=0.01s

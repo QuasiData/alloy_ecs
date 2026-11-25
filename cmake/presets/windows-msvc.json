@@ -1,0 +1,111 @@
+{
+    "version": 8,
+    "include": [
+        "base.json",
+        "platform.json",
+        "compiler.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "windows-msvc",
+            "inherits": [
+                "base",
+                "platform-windows",
+                "compiler-msvc"
+            ]
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "windows-msvc-debug",
+            "inherits": "base",
+            "configurePreset": "windows-msvc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "windows-msvc-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "windows-msvc",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "windows-msvc-release",
+            "inherits": "base",
+            "configurePreset": "windows-msvc",
+            "configuration": "Release"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "windows-msvc-debug",
+            "inherits": "base",
+            "configurePreset": "windows-msvc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "windows-msvc-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "windows-msvc",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "windows-msvc-release",
+            "inherits": "base",
+            "configurePreset": "windows-msvc",
+            "configuration": "Release"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "windows-msvc-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-msvc"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-msvc-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-msvc-debug"
+                }
+            ]
+        },
+        {
+            "name": "windows-msvc-relwithdebinfo",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-msvc"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-msvc-relwithdebinfo"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-msvc-relwithdebinfo"
+                }
+            ]
+        },
+        {
+            "name": "windows-msvc-release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "windows-msvc"
+                },
+                {
+                    "type": "build",
+                    "name": "windows-msvc-release"
+                },
+                {
+                    "type": "test",
+                    "name": "windows-msvc-release"
+                }
+            ]
+        }
+    ]
+}

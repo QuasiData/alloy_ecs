@@ -1,0 +1,17 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 28,
+        "patch": 0
+    },
+    "include": [
+        "cmake/presets/linux-clang.json",
+        "cmake/presets/linux-clang-san.json",
+        "cmake/presets/linux-gcc.json",
+        "cmake/presets/linux-gcc-san.json",
+        "cmake/presets/windows-clang.json",
+        "cmake/presets/windows-msvc.json",
+        "cmake/presets/dev.json"
+    ]
+}

@@ -1,0 +1,699 @@
+{
+    "version": 8,
+    "include": [
+        "base.json",
+        "linux-clang.json",
+        "linux-clang-san.json",
+        "linux-gcc.json",
+        "linux-gcc-san.json",
+        "windows-clang.json",
+        "windows-msvc.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "dev",
+            "inherits": [
+                "base"
+            ],
+            "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
+            }
+        },
+        {
+            "name": "dev-linux-clang",
+            "inherits": [
+                "linux-clang"
+            ],
+            "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
+            }
+        },
+        {
+            "name": "dev-linux-clang-san",
+            "inherits": [
+                "linux-clang-san"
+            ],
+            "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
+            }
+        },
+        {
+            "name": "dev-linux-gcc",
+            "inherits": [
+                "linux-gcc"
+            ],
+            "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
+            }
+        },
+        {
+            "name": "dev-linux-gcc-san",
+            "inherits": [
+                "linux-gcc-san"
+            ],
+            "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
+            }
+        },
+        {
+            "name": "dev-windows-clang",
+            "inherits": [
+                "windows-clang"
+            ],
+            "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
+            }
+        },
+        {
+            "name": "dev-windows-msvc",
+            "inherits": [
+                "windows-msvc"
+            ],
+            "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "dev-debug",
+            "inherits": "base",
+            "configurePreset": "dev",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-release",
+            "inherits": "base",
+            "configurePreset": "dev",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-linux-clang-debug",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-linux-clang-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-linux-clang-release",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-linux-clang-debug-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang-san",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-linux-clang-relwithdebinfo-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang-san",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-linux-clang-release-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang-san",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-linux-gcc-debug",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-linux-gcc-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-linux-gcc-release",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-linux-gcc-debug-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc-san",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-linux-gcc-relwithdebinfo-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc-san",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-linux-gcc-release-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc-san",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-windows-clang-debug",
+            "inherits": "base",
+            "configurePreset": "dev-windows-clang",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-windows-clang-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev-windows-clang",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-windows-clang-release",
+            "inherits": "base",
+            "configurePreset": "dev-windows-clang",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-windows-msvc-debug",
+            "inherits": "base",
+            "configurePreset": "dev-windows-msvc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-windows-msvc-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev-windows-msvc",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-windows-msvc-release",
+            "inherits": "base",
+            "configurePreset": "dev-windows-msvc",
+            "configuration": "Release"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "dev-debug",
+            "inherits": "base",
+            "configurePreset": "dev",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-release",
+            "inherits": "base",
+            "configurePreset": "dev",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-linux-clang-debug",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-linux-clang-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-linux-clang-release",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-linux-clang-debug-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang-san",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-linux-clang-relwithdebinfo-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang-san",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-linux-clang-release-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-clang-san",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-linux-gcc-debug",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-linux-gcc-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-linux-gcc-release",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-linux-gcc-debug-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc-san",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-linux-gcc-relwithdebinfo-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc-san",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-linux-gcc-release-san",
+            "inherits": "base",
+            "configurePreset": "dev-linux-gcc-san",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-windows-clang-debug",
+            "inherits": "base",
+            "configurePreset": "dev-windows-clang",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-windows-clang-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev-windows-clang",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-windows-clang-release",
+            "inherits": "base",
+            "configurePreset": "dev-windows-clang",
+            "configuration": "Release"
+        },
+        {
+            "name": "dev-windows-msvc-debug",
+            "inherits": "base",
+            "configurePreset": "dev-windows-msvc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-windows-msvc-relwithdebinfo",
+            "inherits": "base",
+            "configurePreset": "dev-windows-msvc",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "dev-windows-msvc-release",
+            "inherits": "base",
+            "configurePreset": "dev-windows-msvc",
+            "configuration": "Release"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "dev-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-debug"
+                }
+            ]
+        },
+        {
+            "name": "dev-relwithdebinfo",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-relwithdebinfo"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-relwithdebinfo"
+                }
+            ]
+        },
+        {
+            "name": "dev-release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-release"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-release"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-clang-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-clang-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-clang-debug"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-clang-relwithdebinfo",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-clang-relwithdebinfo"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-clang-relwithdebinfo"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-clang-release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-clang-release"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-clang-release"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-clang-debug-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-clang-san"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-clang-debug-san"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-clang-debug-san"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-clang-relwithdebinfo-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-clang-san"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-clang-relwithdebinfo-san"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-clang-relwithdebinfo-san"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-clang-release-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-clang-san"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-clang-release-san"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-clang-release-san"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-gcc-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-gcc"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-gcc-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-gcc-debug"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-gcc-relwithdebinfo",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-gcc"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-gcc-relwithdebinfo"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-gcc-relwithdebinfo"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-gcc-release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-gcc"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-gcc-release"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-gcc-release"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-gcc-debug-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-gcc-san"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-gcc-debug-san"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-gcc-debug-san"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-gcc-relwithdebinfo-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-gcc-san"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-gcc-relwithdebinfo-san"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-gcc-relwithdebinfo-san"
+                }
+            ]
+        },
+        {
+            "name": "dev-linux-gcc-release-san",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-linux-gcc-san"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-linux-gcc-release-san"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-linux-gcc-release-san"
+                }
+            ]
+        },
+        {
+            "name": "dev-windows-clang-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-windows-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-windows-clang-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-windows-clang-debug"
+                }
+            ]
+        },
+        {
+            "name": "dev-windows-clang-relwithdebinfo",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-windows-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-windows-clang-relwithdebinfo"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-windows-clang-relwithdebinfo"
+                }
+            ]
+        },
+        {
+            "name": "dev-windows-clang-release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-windows-clang"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-windows-clang-release"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-windows-clang-release"
+                }
+            ]
+        },
+        {
+            "name": "dev-windows-msvc-debug",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-windows-msvc"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-windows-msvc-debug"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-windows-msvc-debug"
+                }
+            ]
+        },
+        {
+            "name": "dev-windows-msvc-relwithdebinfo",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-windows-msvc"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-windows-msvc-relwithdebinfo"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-windows-msvc-relwithdebinfo"
+                }
+            ]
+        },
+        {
+            "name": "dev-windows-msvc-release",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "dev-windows-msvc"
+                },
+                {
+                    "type": "build",
+                    "name": "dev-windows-msvc-release"
+                },
+                {
+                    "type": "test",
+                    "name": "dev-windows-msvc-release"
+                }
+            ]
+        }
+    ]
+}
