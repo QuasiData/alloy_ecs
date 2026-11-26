@@ -9,7 +9,7 @@ option(ALLOY_ECS_BUILD_DOCS "Build API documentation target" OFF)
 add_library(alloy_ecs_compile_options INTERFACE)
 
 target_compile_features(
-    alloy_ecs_compile_options INTERFACE cxx_std_20
+    alloy_ecs_compile_options INTERFACE cxx_std_23
 )
 
 if(CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC")
@@ -27,18 +27,19 @@ endif()
 include(cmake/AlloyDependencies.cmake)
 include(cmake/AlloyDependencyPins.cmake)
 
+alloy_declare_dependency(alloy_core)
 alloy_declare_dependency(alloy_alloc)
 alloy_declare_dependency(alloy_datastructures)
-FetchContent_MakeAvailable(alloy_alloc alloy_datastructures)
+FetchContent_MakeAvailable(alloy_core alloy_alloc alloy_datastructures)
 
 add_library(alloy_ecs STATIC src/ecs.cpp)
 add_library(alloy::ecs ALIAS alloy_ecs)
-target_compile_features(alloy_ecs PUBLIC cxx_std_20)
+target_compile_features(alloy_ecs PUBLIC cxx_std_23)
 set_target_properties(alloy_ecs PROPERTIES CXX_EXTENSIONS OFF CXX_SCAN_FOR_MODULES OFF)
 target_include_directories(alloy_ecs PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
 )
-target_link_libraries(alloy_ecs PUBLIC alloy::alloc alloy::datastructures PRIVATE alloy_ecs_compile_options)
+target_link_libraries(alloy_ecs PUBLIC alloy::core alloy::alloc alloy::datastructures PRIVATE alloy_ecs_compile_options)
 
 if(ALLOY_ECS_BUILD_TESTS)
     enable_testing()

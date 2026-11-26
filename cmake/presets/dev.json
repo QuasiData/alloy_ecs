@@ -16,6 +16,7 @@
                 "base"
             ],
             "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_CORE": "${sourceDir}/../alloy_core",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
             }
@@ -26,6 +27,7 @@
                 "linux-clang"
             ],
             "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_CORE": "${sourceDir}/../alloy_core",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
             }
@@ -36,6 +38,7 @@
                 "linux-clang-san"
             ],
             "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_CORE": "${sourceDir}/../alloy_core",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
             }
@@ -46,6 +49,7 @@
                 "linux-gcc"
             ],
             "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_CORE": "${sourceDir}/../alloy_core",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
             }
@@ -56,6 +60,7 @@
                 "linux-gcc-san"
             ],
             "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_CORE": "${sourceDir}/../alloy_core",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
             }
@@ -66,6 +71,7 @@
                 "windows-clang"
             ],
             "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_CORE": "${sourceDir}/../alloy_core",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
             }
@@ -76,6 +82,7 @@
                 "windows-msvc"
             ],
             "cacheVariables": {
+                "FETCHCONTENT_SOURCE_DIR_ALLOY_CORE": "${sourceDir}/../alloy_core",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_ALLOC": "${sourceDir}/../alloy_alloc",
                 "FETCHCONTENT_SOURCE_DIR_ALLOY_DATASTRUCTURES": "${sourceDir}/../alloy_datastructures"
             }

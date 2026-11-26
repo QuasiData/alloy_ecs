@@ -2,5 +2,5 @@
 #include <iostream>
 
 int main() {
-    std::cout << "hello alloy_ecs v" <<  std::endl;
+    std::cout << "hello alloy_ecs v" <<  '\n';
 }
