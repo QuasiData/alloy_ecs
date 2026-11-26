@@ -35,6 +35,26 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: x64
+
+      # Workaround for actions/runner-images#15367.
+      - name: Select Visual Studio LLVM
+        if: matrix.preset == 'windows-clang-debug'
+        shell: pwsh
+        run: |
+          $llvm = Join-Path $env:VCINSTALLDIR "Tools\Llvm\x64\bin"
+
+          if (-not (Test-Path "$llvm\clang++.exe")) {
+            throw "Visual Studio LLVM not found at $llvm"
+          }
+
+          $llvm >> $env:GITHUB_PATH
+
+
+      - name: Check Windows Clang
+        if: matrix.preset == 'windows-clang-debug'
+        run: clang++ --version
+      #-------------------------------------------
+
       - name: Check build tools
         run: |
           cmake --version
