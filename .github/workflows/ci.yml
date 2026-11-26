@@ -13,19 +13,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-24.04
+          - os: ubuntu-26.04
             preset: linux-clang-debug
-          - os: ubuntu-24.04
+          - os: ubuntu-26.04
             preset: linux-clang-debug-san
-          - os: ubuntu-24.04
+          - os: ubuntu-26.04
             preset: linux-gcc-debug
-          - os: ubuntu-24.04
+          - os: ubuntu-26.04
             preset: linux-gcc-debug-san
-          - os: windows-2022
+          - os: windows-2025
             preset: windows-clang-debug
-          - os: windows-2022
+          - os: windows-2025
             preset: windows-msvc-debug
-          - os: ubuntu-24.04
+          - os: ubuntu-26.04
             preset: linux-gcc-release
     runs-on: ${{ matrix.os }}
     steps:
